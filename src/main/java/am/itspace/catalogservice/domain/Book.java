@@ -12,8 +12,8 @@ import java.time.Instant;
 
 public record Book(
 
-        @Id
-        Long id,
+//        @Id
+//        Long id,
 
         @NotBlank(message = "The Book ISBN must be defined.")
         @Pattern(
@@ -27,23 +27,22 @@ public record Book(
         String author,
         @NotNull(message = "The Book price must be defined.")
         @Positive(message = "The book price must be greater than zero.")
-        Double price,
-
-        String publisher,
-        @CreatedDate
-        Instant createdDate,
-
-        @LastModifiedDate
-        Instant lastModifiedDate,
-
-        @Version
-        int version
-) {
-    public static Book of(
-            String isbn, String title, String author, Double price, String publisher
-    ) {
-        return new Book(
-                null, isbn, title, author, price, publisher, null, null, 0
-        );
-    }
-}
+        Double price
+        ){}
+//        String publisher,
+//        @CreatedDate
+//        Instant createdDate,
+//
+//        @LastModifiedDate
+//        Instant lastModifiedDate,
+//
+//        @Version
+//        int version
+//) {
+//    public static Book of(
+//            String isbn, String title, String author, Double price, String publisher
+//    ) {
+//        return new Book(
+//                null, isbn, title, author, price, publisher, null, null, 0
+//        );
+//    }
